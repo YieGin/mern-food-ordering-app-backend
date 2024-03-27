@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-  restaurant: { type: mongoose.Schema.Types.ObjectId, ref: "restaurant" },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
+  restaurant: { type: mongoose.Schema.Types.ObjectId, ref: "Restaurant" },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   deliveryDetails: {
     email: { type: String, require: true },
     name: { type: String, require: true },
@@ -14,6 +14,7 @@ const orderSchema = new mongoose.Schema({
       menuItemId: { type: String, require: true },
       quantity: { type: String, require: true },
       name: { type: String, require: true },
+      price: { type: Number, require: true },
     },
   ],
   totalAmount: Number,
