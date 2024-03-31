@@ -20,7 +20,7 @@ router.get('/order', jwtCheck, jwtParse, MyRestaurantController.getMyRestaurantO
 router.patch('/order/:orderId/status', jwtCheck, jwtParse, MyRestaurantController.updateOrderStatus)
 
 // /api/my/resturant
-router.get('/',MyRestaurantController.getMyRestaurant)
+router.get('/', jwtCheck, jwtParse, MyRestaurantController.getMyRestaurant)
 
 // /api/my/resturant
 router.post('/', upload.single('imageFile'), validateMyRestaurantRequest, jwtCheck, jwtParse, MyRestaurantController.createMyRestaurant)
